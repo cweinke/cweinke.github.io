@@ -1,4 +1,5 @@
-
+const key = "It's a secret to everybody"
+localStorage.setItem(key, '+1 Rupee')
 
 
 const hours = new Date().getHours() // get the current hour
@@ -28,6 +29,7 @@ welcome.append(h3);
 
 const html = greeting;
 h3.innerHTML = html;
+
 
 
 
