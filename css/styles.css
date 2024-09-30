@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿#wrapper {
 
     width: 1000px;
@@ -71,4 +72,79 @@ a:active {
 }
 .aside {
     color: aqua;
+=======
+﻿#wrapper {
+
+    width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 50px;
+}
+body {
+
+    font-family: Arial;
+    font-size: 1em;
+    color: purple;
+    background: rgb(108, 108, 187);
+}
+h1 {
+
+    font-family: Arial;
+    font-size: 2em;
+}
+a {
+
+    line-height:  2;
+    text-decoration: none;
+}
+ul {
+
+    padding-left: 0px;
+    margin-left: 0px;
+}
+li {
+
+    margin-left: 20px;
+    padding-right: 10px;
+}
+img {
+
+    margin: auto;
+}
+a:link {
+
+    color: magenta;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+
+    color: olivedrab;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:hover {
+
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+
+    color: orange;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.pics {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.aside {
+    color: aqua;
+>>>>>>> 5675026c88e5b6b03f5e414e4b665d079054dde8
 }
