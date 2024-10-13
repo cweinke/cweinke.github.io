@@ -23,7 +23,7 @@ else if (hours >= 17 || hours < 4){
 };
 console.log(greeting);
 
-const welcome = document.querySelector('div.welcome');
+//const welcome = document.querySelector('div.welcome');
 const h3 = document.createElement('h3');
 document.getElementById('h3').innerHTML = greeting;
 welcome.append(h3);
@@ -31,4 +31,44 @@ welcome.append(h3);
 const html = greeting;
 h3.innerHTML = html;
 
+const urls = [
+    'https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://images.pexels.com/photos/933964/pexels-photo-933964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://images.pexels.com/photos/1251861/pexels-photo-1251861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://images.pexels.com/photos/1370296/pexels-photo-1370296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+].map(url => { (new Image()).src = url; return url })
+
+const images = document.querySelectorAll('#carousel img')
+
+let currentImage = 0
+const showImages = () => {
+    const offset = currentImage % urls.length
+    images.forEach((image, index) => {
+        const imageIndex = (index + offset + urls.length) % urls.length
+        image.src = urls[imageIndex]
+    })
+}
+
+showImages()
+
+function nextImage() {
+    ++currentImage;
+    showImages();
+}
+
+function previousImage() {
+    --currentImage;
+    showImages();
+}
+
+setInterval(() => {
+    nextImage()
+}, 5000);
+
+const next = document.querySelector('#next')
+next.addEventListener('click', (nextImage))
+
+const prev = document.querySelector('#prev')
+prev.addEventListener('click', (previousImage))
 
