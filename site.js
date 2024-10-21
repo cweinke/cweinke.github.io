@@ -3,6 +3,7 @@ const key = "It's a secret to everybody"
 localStorage.setItem(key, '+1 Rupee')
 
 
+
 const hours = new Date().getHours() // get the current hour
 console.log(hours);
 const isMorning = hours >= 4 && hours < 12 // is it morning?
@@ -71,4 +72,30 @@ next.addEventListener('click', (nextImage))
 
 const prev = document.querySelector('#prev')
 prev.addEventListener('click', (previousImage))
+//---------------------------------------------------
+const todos = JSON.parse(localStorage.getItem('todo-list')) || [];
+const renderTodos = () =>
+{
+    const todoList = document.querySelector('#todo-list')
+    todoList.innerHTML = '';
+    todos.forEach(todo =>
+        {const li = document.createElement('li')
+        li.textContent = todo.text
+        todoList.appendChild(li)});
+    
+};
+
+renderTodos();
+const todoInput = document.querySelector('#new-todo')
+const todoButton = document.querySelector('#todo-button')
+todoButton.addEventListener('click', () => {
+	
+
+    todos.push({ text: todoInput.value, completed: false })
+    localStorage.setItem('todo-list', JSON.stringify(todos))
+    renderTodos();
+
+})
+
+
 
